@@ -6,7 +6,7 @@ interface Props {
 
 const FactCart: React.FC<Props> = ({fact}) => {
   return (
-    <div className="card col-6 mb-2 p-2">
+    <div className="card col-6 p-2 g-2">
       {fact}
     </div>
   );

@@ -10,7 +10,7 @@ const Home: React.FC<Props> = ({facts}) => {
   const imageUrl = 'https://manofmany.com/wp-content/uploads/2021/07/23-Best-Bakery-Shops-in-Sydney-Sourdough-Bread-to-Croissant-1200x900.jpeg'
 
   return (
-    <div className="container">
+    <div className="container py-2">
       <h1 className="text-center mt-2">Добрая перканя</h1>
       <BakeryDescr
         img={imageUrl}

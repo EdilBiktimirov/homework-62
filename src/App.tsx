@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {Route, Routes} from "react-router-dom";
 import Navbar from "./components/Navbar/Navbar";
 import Home from "./containers/Home/Home";
@@ -14,6 +14,10 @@ import grafic from './assets/grafic.png';
 import {Product} from "./types";
 import Products from "./containers/Products/Products";
 import Contacts from "./containers/Contacts/Contacts";
+import Portfolio from "./containers/Portfolio/Portfolio";
+import Game from "./containers/Game/Game";
+import Hamburger from "./containers/Hamburger/Hamburger";
+import Countries from "./containers/Countries/Countries";
 
 
 const BAKERY_FACTS: string[] = [
@@ -22,19 +26,22 @@ const BAKERY_FACTS: string[] = [
   "Вся продукция в наших пекарнях приготовлена руками наших пекарей со старанием и любовью.",
   "Свежий хлеб, пироги, выпечка, печенье — каждый Гость найдет продукцию," +
   " которая подарит истинное наслаждение от качественной и вкусной выпечки."
-]
-
+];
 
 
 function App() {
-  const [products, setProducts] = useState<Product[]>([
-    {name: "Хлеб", price: 50, img: bread},
-    {name: "Торты", price: 300, img: cakes},
-    {name: "Пироженные", price: 150, img: cakes2},
-    {name: "Печенья", price: 100, img: cookies},
-    {name: "Макарунсы", price: 350, img: makaroons},
-    {name: "Пироги", price: 250, img: pie},
-  ])
+  const [products, setProducts] = useState<Product[]>([]);
+
+  useEffect(() =>{
+    setProducts([
+      {name: "Хлеб", price: 50, img: bread},
+      {name: "Торты", price: 300, img: cakes},
+      {name: "Пироженные", price: 150, img: cakes2},
+      {name: "Печенья", price: 100, img: cookies},
+      {name: "Макарунсы", price: 350, img: makaroons},
+      {name: "Пироги", price: 250, img: pie},
+    ])
+  }, []);
 
   return (
     <div className="App">
@@ -49,6 +56,19 @@ function App() {
         <Route path="/contacts" element={(
           <Contacts imgGrafic={grafic} imgAdress={adress}/>
         )}/>
+        <Route path="/portfolio" element={(
+          <Portfolio/>
+        )}>
+          <Route path="game" element={(
+            <Game/>
+          )}/>
+          <Route path="hamburger" element={(
+            <Hamburger/>
+          )}/>
+          <Route path="countries" element={(
+            <Countries/>
+          )}/>
+        </Route>
       </Routes>
     </div>
   );
