@@ -1,7 +1,6 @@
 import React from 'react';
 import game from  "../../assets/game.png";
 
-
 const Game = () => {
   return (
     <div className="mt-3 d-flex flex-column align-items-center">

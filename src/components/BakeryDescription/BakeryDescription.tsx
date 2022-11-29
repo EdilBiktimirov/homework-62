@@ -5,7 +5,7 @@ interface Props {
   description: string;
 }
 
-const BakeryDescr: React.FC<Props> = ({img, description}) => {
+const BakeryDescription: React.FC<Props> = ({img, description}) => {
   return (
     <div>
       <div className="imgBox my-3">
@@ -19,4 +19,4 @@ const BakeryDescr: React.FC<Props> = ({img, description}) => {
   );
 };
 
-export default BakeryDescr;
+export default BakeryDescription;

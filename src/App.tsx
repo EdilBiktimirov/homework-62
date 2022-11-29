@@ -2,22 +2,21 @@ import React, {useEffect, useState} from 'react';
 import {Route, Routes} from "react-router-dom";
 import Navbar from "./components/Navbar/Navbar";
 import Home from "./containers/Home/Home";
-import './App.css';
-import bread from './assets/bread.jpeg';
-import cakes from './assets/cakes.jpeg';
-import cakes2 from './assets/cakes2.jpeg';
-import cookies from './assets/cookies.jpeg';
-import makaroons from './assets/makaroons.jpeg';
-import pie from './assets/pie.jpeg';
-import adress from './assets/adressImg.png';
-import grafic from './assets/grafic.png';
-import {Product} from "./types";
 import Products from "./containers/Products/Products";
 import Contacts from "./containers/Contacts/Contacts";
 import Portfolio from "./containers/Portfolio/Portfolio";
 import Game from "./containers/Game/Game";
 import Hamburger from "./containers/Hamburger/Hamburger";
 import Countries from "./containers/Countries/Countries";
+import type {Product} from "./types";
+import bread from './assets/bread.jpeg';
+import cakes from './assets/cakes.jpeg';
+import cakes2 from './assets/cakes2.jpeg';
+import cookies from './assets/cookies.jpeg';
+import macaroons from './assets/makaroons.jpeg';
+import pie from './assets/pie.jpeg';
+import address from './assets/adressImg.png';
+import schedule from './assets/grafic.png';
 
 
 const BAKERY_FACTS: string[] = [
@@ -28,17 +27,16 @@ const BAKERY_FACTS: string[] = [
   " которая подарит истинное наслаждение от качественной и вкусной выпечки."
 ];
 
-
 function App() {
   const [products, setProducts] = useState<Product[]>([]);
 
-  useEffect(() =>{
+  useEffect(() => {
     setProducts([
       {name: "Хлеб", price: 50, img: bread},
       {name: "Торты", price: 300, img: cakes},
       {name: "Пироженные", price: 150, img: cakes2},
       {name: "Печенья", price: 100, img: cookies},
-      {name: "Макарунсы", price: 350, img: makaroons},
+      {name: "Макарунсы", price: 350, img: macaroons},
       {name: "Пироги", price: 250, img: pie},
     ])
   }, []);
@@ -54,7 +52,7 @@ function App() {
           <Products products={products}/>
         )}/>
         <Route path="/contacts" element={(
-          <Contacts imgGrafic={grafic} imgAdress={adress}/>
+          <Contacts imgSchedule={schedule} imgAddress={address}/>
         )}/>
         <Route path="/portfolio" element={(
           <Portfolio/>

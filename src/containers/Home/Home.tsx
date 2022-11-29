@@ -1,18 +1,19 @@
 import React from 'react';
 import FactCart from "../../components/FactCart/FactCart";
-import BakeryDescr from "../../components/BakeryDescr/BakeryDescr";
+import BakeryDescription from "../../components/BakeryDescription/BakeryDescription";
 
 interface Props {
   facts: string [];
 }
 
 const Home: React.FC<Props> = ({facts}) => {
-  const imageUrl = 'https://manofmany.com/wp-content/uploads/2021/07/23-Best-Bakery-Shops-in-Sydney-Sourdough-Bread-to-Croissant-1200x900.jpeg'
+  const imageUrl = 'https://manofmany.com/wp-content/uploads/2021/07/23-Best-Bakery' +
+    '-Shops-in-Sydney-Sourdough-Bread-to-Croissant-1200x900.jpeg';
 
   return (
     <div className="container py-2">
       <h1 className="text-center mt-2">Добрая перканя</h1>
-      <BakeryDescr
+      <BakeryDescription
         img={imageUrl}
         description={"Пекарня объединяет русские и французские кулинарные традиции. " +
           "Местным работникам известны секреты старинных поваренных книг, а для создания своих хлебобулочных шедевров они используют только натуральные ингредиенты. " +
@@ -21,12 +22,11 @@ const Home: React.FC<Props> = ({facts}) => {
       <h3 className='text-center'>Интересные факты про нашу перканю:</h3>
       <div className="row">
         {facts.map((elem) => (
-          <FactCart fact={elem} key={Math.random()}/>
+          <FactCart
+            fact={elem}
+            key={Math.random()}/>
         ))}
       </div>
-
-
-
     </div>
   );
 };

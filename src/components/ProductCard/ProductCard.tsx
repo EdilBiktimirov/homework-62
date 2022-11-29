@@ -7,7 +7,6 @@ interface Props {
 }
 
 const ProductCard: React.FC<Props> = ({name, price, img}) => {
-
   return (
     <>
       <div className="col">
