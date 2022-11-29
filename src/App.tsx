@@ -67,6 +67,9 @@ function App() {
             <Countries/>
           )}/>
         </Route>
+        <Route path="*" element={(
+          <h1 className="text-center mt-4">Not found</h1>
+        )}/>
       </Routes>
     </div>
   );
